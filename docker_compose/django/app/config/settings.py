@@ -18,6 +18,7 @@ include(
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = (os.environ.get("SECRET_KEY"),)
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
+CSRF_TRUSTED_ORIGINS = os.environ.get("CSRF_TRUSTED_ORIGINS", "").split(",")
 LOCALE_PATHS = ["movies/locale"]
 ROOT_URLCONF = "config.urls"
 WSGI_APPLICATION = "config.wsgi.application"

@@ -1,17 +1,42 @@
 version: '3'
 services:
-  service:
-    build: app
+  postgres:
+    image: postgres:13.3
+    env_file:
+      - ./.env
+    volumes:
+      - ./postgres/data:/var/lib/postgresql/data/
+    ports:
+      - "8432:5432"
+
+  migrations:
+    build: ./django
+    command: python manage.py migrate --noinput
+    env_file:
+      - ./.env
+    depends_on:
+      - postgres
+
+  django:
+    build: ./django
+    env_file:
+      - ./.env
+    depends_on:
+      - postgres
+      - migrations
     expose:
       - "8000"
 
   nginx:
-    image: nginx:latest
+    image: nginx:1.24
+    env_file:
+      - ./.env
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./configs:/etc/nginx/conf.d:ro
-      - ./data:/data/:ro
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/configs:/etc/nginx/conf.d:ro
+      - ./django/app/static:/data/static:ro
     depends_on:
-      - service
+      - django
+      - postgres
     ports:
-      - "80:80"
+      - "8080:80"

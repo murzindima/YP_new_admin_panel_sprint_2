@@ -54,5 +54,4 @@ USER ${DOCKER_USER}
 WORKDIR ${VIRTUAL_ENV}
 
 EXPOSE 8000
-# TODO: switch to ENTRYPOINT
 CMD ["uwsgi", "--strict", "--ini", "uwsgi.ini"]
