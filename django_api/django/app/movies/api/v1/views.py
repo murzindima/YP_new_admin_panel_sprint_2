@@ -1,5 +1,5 @@
 from django.contrib.postgres.aggregates import ArrayAgg
-from django.http import JsonResponse
+from django.http import JsonResponse, Http404
 from django.views.generic.list import BaseListView
 from django.views.generic.detail import BaseDetailView
 from django.db.models import Q
@@ -50,18 +50,31 @@ class MoviesListApi(MoviesApiMixin, BaseListView):
 
 
 class MoviesDetailApi(MoviesApiMixin, BaseDetailView):
+
+    def get_object(self, queryset=None):
+        """Override get_object to fetch a dictionary representation of the movie."""
+        queryset = self.get_queryset()
+        # Filter by primary key from the URL
+        obj = queryset.filter(id=self.kwargs['pk']).first()
+
+        if not obj:
+            raise Http404("No movie found matching the query")
+
+        return obj
+
     def get_context_data(self, **kwargs):
         obj = self.get_object()
         context = {
-            'id': obj.id,
-            'title': obj.title,
-            'description': obj.description,
-            'creation_date': obj.creation_date,
-            'rating': obj.rating,
-            'type': obj.type,
-            'genre_names': [genre.name for genre in obj.genres.all()],
-            'actor_names': [pfw.person.full_name for pfw in obj.personfilmwork_set.filter(role=PersonFilmworkRole.ACTOR)],
-            'director_names': [pfw.person.full_name for pfw in obj.personfilmwork_set.filter(role=PersonFilmworkRole.DIRECTOR)],
-            'writer_names': [pfw.person.full_name for pfw in obj.personfilmwork_set.filter(role=PersonFilmworkRole.WRITER)],
+            'id': obj['id'],
+            'title': obj['title'],
+            'description': obj['description'],
+            'creation_date': obj['creation_date'],
+            'rating': obj['rating'],
+            'type': obj['type'],
+            'genre_names': obj['genre_names'],
+            'actor_names': obj['actor_names'],
+            'director_names': obj['director_names'],
+            'writer_names': obj['writer_names'],
         }
         return context
+
