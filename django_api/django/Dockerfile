@@ -45,7 +45,7 @@ COPY app/ ${VIRTUAL_ENV}
 COPY uwsgi/uwsgi.ini ${VIRTUAL_ENV}/uwsgi.ini
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libpq5\
+    libpq5 \
     && rm -rf /var/lib/apt/lists/*
 RUN addgroup --system ${DOCKER_GROUP} && adduser --system ${DOCKER_USER} \
     && chown -R ${DOCKER_USER}:${DOCKER_GROUP} "${PROJECT_ROOT}"
