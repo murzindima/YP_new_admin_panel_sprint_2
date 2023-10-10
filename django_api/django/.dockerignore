@@ -6,3 +6,4 @@ tests/
 *.py[co]
 Dockerfile*
 .env
+config/.env
