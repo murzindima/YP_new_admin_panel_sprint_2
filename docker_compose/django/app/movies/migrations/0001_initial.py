@@ -9,7 +9,9 @@ import uuid
 class Migration(migrations.Migration):
     initial = True
 
-    dependencies = []
+    dependencies = [
+        ("movies", "0005_create_content_schema"),
+    ]
 
     operations = [
         migrations.CreateModel(

@@ -43,6 +43,8 @@ ENV VIRTUAL_ENV=${PROJECT_ROOT}/.venv \
 COPY --from=builder ${VIRTUAL_ENV} ${VIRTUAL_ENV}
 COPY app/ ${VIRTUAL_ENV}
 COPY uwsgi/uwsgi.ini ${VIRTUAL_ENV}/uwsgi.ini
+COPY docker-entrypoint.sh ${VIRTUAL_ENV}/docker-entrypoint.sh
+RUN mkdir ${VIRTUAL_ENV}/static
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libpq5\
@@ -54,4 +56,4 @@ USER ${DOCKER_USER}
 WORKDIR ${VIRTUAL_ENV}
 
 EXPOSE 8000
-CMD ["uwsgi", "--strict", "--ini", "uwsgi.ini"]
+ENTRYPOINT ["./docker-entrypoint.sh"]
