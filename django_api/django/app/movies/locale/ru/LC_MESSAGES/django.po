@@ -39,14 +39,10 @@ msgid "description"
 msgstr "Описание"
 
 #: movies/models.py:34
-#, fuzzy
-#| msgid "genre"
 msgid "Genre"
 msgstr "Жанр"
 
 #: movies/models.py:35
-#, fuzzy
-#| msgid "genres"
 msgid "Genres"
 msgstr "Жанры"
 
@@ -79,14 +75,10 @@ msgid "genres"
 msgstr "Жанры"
 
 #: movies/models.py:68
-#, fuzzy
-#| msgid "film_work"
 msgid "Filmwork"
 msgstr "Кинопроизведение"
 
 #: movies/models.py:69
-#, fuzzy
-#| msgid "film_work"
 msgid "Filmworks"
 msgstr "Кинопроизведения"
 
@@ -99,8 +91,6 @@ msgid "genre"
 msgstr "Жанр"
 
 #: movies/models.py:83
-#, fuzzy
-#| msgid "film_work"
 msgid "Filmwork Genre"
 msgstr "Жанр Кинопроизведения"
 
@@ -113,14 +103,10 @@ msgid "full_name"
 msgstr "Полное Имя"
 
 #: movies/models.py:100
-#, fuzzy
-#| msgid "person"
 msgid "Person"
 msgstr "Персона"
 
 #: movies/models.py:101
-#, fuzzy
-#| msgid "person"
 msgid "Persons"
 msgstr "Персоны"
 

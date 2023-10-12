@@ -17,8 +17,6 @@ msgid "movies"
 msgstr "Movies"
 
 #: movies/models.py:9 movies/models.py:79 movies/models.py:123
-#, fuzzy
-#| msgid "creation_date"
 msgid "created"
 msgstr "Creation Date"
 
@@ -39,14 +37,10 @@ msgid "description"
 msgstr "Description"
 
 #: movies/models.py:34
-#, fuzzy
-#| msgid "genre"
 msgid "Genre"
 msgstr "Genre"
 
 #: movies/models.py:35
-#, fuzzy
-#| msgid "genres"
 msgid "Genres"
 msgstr "Genres"
 
@@ -79,14 +73,10 @@ msgid "genres"
 msgstr "Genres"
 
 #: movies/models.py:68
-#, fuzzy
-#| msgid "film_work"
 msgid "Filmwork"
 msgstr "Film Work"
 
 #: movies/models.py:69
-#, fuzzy
-#| msgid "film_work"
 msgid "Filmworks"
 msgstr "Film Works"
 
@@ -99,8 +89,6 @@ msgid "genre"
 msgstr "Genre"
 
 #: movies/models.py:83
-#, fuzzy
-#| msgid "film_work"
 msgid "Filmwork Genre"
 msgstr "Film Work Genre"
 
@@ -113,14 +101,10 @@ msgid "full_name"
 msgstr "Full Name"
 
 #: movies/models.py:100
-#, fuzzy
-#| msgid "person"
 msgid "Person"
 msgstr "Person"
 
 #: movies/models.py:101
-#, fuzzy
-#| msgid "person"
 msgid "Persons"
 msgstr "Person"
 
