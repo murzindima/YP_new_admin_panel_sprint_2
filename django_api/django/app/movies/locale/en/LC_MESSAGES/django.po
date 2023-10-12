@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-14 19:35+0000\n"
+"POT-Creation-Date: 2023-10-12 16:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,6 +38,18 @@ msgstr "Name"
 msgid "description"
 msgstr "Description"
 
+#: movies/models.py:34
+#, fuzzy
+#| msgid "genre"
+msgid "Genre"
+msgstr "Genre"
+
+#: movies/models.py:35
+#, fuzzy
+#| msgid "genres"
+msgid "Genres"
+msgstr "Genres"
+
 #: movies/models.py:39
 msgid "movie"
 msgstr "Movies"
@@ -66,6 +78,18 @@ msgstr "Type"
 msgid "genres"
 msgstr "Genres"
 
+#: movies/models.py:68
+#, fuzzy
+#| msgid "film_work"
+msgid "Filmwork"
+msgstr "Film Work"
+
+#: movies/models.py:69
+#, fuzzy
+#| msgid "film_work"
+msgid "Filmworks"
+msgstr "Film Works"
+
 #: movies/models.py:74 movies/models.py:112
 msgid "film_work"
 msgstr "Film Work"
@@ -74,9 +98,31 @@ msgstr "Film Work"
 msgid "genre"
 msgstr "Genre"
 
+#: movies/models.py:83
+#, fuzzy
+#| msgid "film_work"
+msgid "Filmwork Genre"
+msgstr "Film Work Genre"
+
+#: movies/models.py:84
+msgid "Filmwork Genres"
+msgstr "Film Work Genres"
+
 #: movies/models.py:93
 msgid "full_name"
 msgstr "Full Name"
+
+#: movies/models.py:100
+#, fuzzy
+#| msgid "person"
+msgid "Person"
+msgstr "Person"
+
+#: movies/models.py:101
+#, fuzzy
+#| msgid "person"
+msgid "Persons"
+msgstr "Person"
 
 #: movies/models.py:105
 msgid "actor"
@@ -97,3 +143,11 @@ msgstr "Person"
 #: movies/models.py:118
 msgid "role"
 msgstr "Role"
+
+#: movies/models.py:127
+msgid "Filmwork Person"
+msgstr "Film Work Person"
+
+#: movies/models.py:128
+msgid "Filmwork Persons"
+msgstr "Film Work Persons"

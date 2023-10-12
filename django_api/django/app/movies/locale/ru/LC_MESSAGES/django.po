@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-14 19:35+0000\n"
+"POT-Creation-Date: 2023-10-12 16:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,6 +38,18 @@ msgstr "Имя"
 msgid "description"
 msgstr "Описание"
 
+#: movies/models.py:34
+#, fuzzy
+#| msgid "genre"
+msgid "Genre"
+msgstr "Жанр"
+
+#: movies/models.py:35
+#, fuzzy
+#| msgid "genres"
+msgid "Genres"
+msgstr "Жанры"
+
 #: movies/models.py:39
 msgid "movie"
 msgstr "Фильмы"
@@ -66,6 +78,18 @@ msgstr "Тип"
 msgid "genres"
 msgstr "Жанры"
 
+#: movies/models.py:68
+#, fuzzy
+#| msgid "film_work"
+msgid "Filmwork"
+msgstr "Кинопроизведение"
+
+#: movies/models.py:69
+#, fuzzy
+#| msgid "film_work"
+msgid "Filmworks"
+msgstr "Кинопроизведения"
+
 #: movies/models.py:74 movies/models.py:112
 msgid "film_work"
 msgstr "Кинопроизведение"
@@ -74,9 +98,31 @@ msgstr "Кинопроизведение"
 msgid "genre"
 msgstr "Жанр"
 
+#: movies/models.py:83
+#, fuzzy
+#| msgid "film_work"
+msgid "Filmwork Genre"
+msgstr "Жанр Кинопроизведения"
+
+#: movies/models.py:84
+msgid "Filmwork Genres"
+msgstr "Жанры Кинопроизведения"
+
 #: movies/models.py:93
 msgid "full_name"
 msgstr "Полное Имя"
+
+#: movies/models.py:100
+#, fuzzy
+#| msgid "person"
+msgid "Person"
+msgstr "Персона"
+
+#: movies/models.py:101
+#, fuzzy
+#| msgid "person"
+msgid "Persons"
+msgstr "Персоны"
 
 #: movies/models.py:105
 msgid "actor"
@@ -97,3 +143,11 @@ msgstr "Персона"
 #: movies/models.py:118
 msgid "role"
 msgstr "Роль"
+
+#: movies/models.py:127
+msgid "Filmwork Person"
+msgstr "Персона Кинопроизведения"
+
+#: movies/models.py:128
+msgid "Filmwork Persons"
+msgstr "Персоны Кинопроизведения"

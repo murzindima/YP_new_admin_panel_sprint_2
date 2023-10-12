@@ -31,8 +31,8 @@ class Genre(UUIDMixin, TimeStampedMixin):
 
     class Meta:
         db_table = 'content"."genre'
-        verbose_name = "Жанр"
-        verbose_name_plural = "Жанры"
+        verbose_name = _("Genre")
+        verbose_name_plural = _("Genres")
 
 
 class FilmworkType(models.TextChoices):
@@ -65,8 +65,8 @@ class Filmwork(UUIDMixin, TimeStampedMixin):
 
     class Meta:
         db_table = 'content"."film_work'
-        verbose_name = "Кинопроизведение"
-        verbose_name_plural = "Кинопроизведения"
+        verbose_name = _("Filmwork")
+        verbose_name_plural = _("Filmworks")
 
 
 class GenreFilmwork(UUIDMixin):
@@ -80,8 +80,8 @@ class GenreFilmwork(UUIDMixin):
 
     class Meta:
         db_table = 'content"."genre_film_work'
-        verbose_name = "Жанр кинопроизведения"
-        verbose_name_plural = "Жанры кинопроизведения"
+        verbose_name = _("Filmwork Genre")
+        verbose_name_plural = _("Filmwork Genres")
         constraints = [
             models.UniqueConstraint(
                 fields=["film_work_id", "genre_id"], name="film_work_genre"
@@ -97,8 +97,8 @@ class Person(UUIDMixin, TimeStampedMixin):
 
     class Meta:
         db_table = 'content"."person'
-        verbose_name = "Персона"
-        verbose_name_plural = "Персоны"
+        verbose_name = _("Person")
+        verbose_name_plural = _("Persons")
 
 
 class PersonFilmworkRole(models.TextChoices):
@@ -124,8 +124,8 @@ class PersonFilmwork(UUIDMixin):
 
     class Meta:
         db_table = 'content"."person_film_work'
-        verbose_name = "Актер кинопроизведения"
-        verbose_name_plural = "Актеры кинопроизведения"
+        verbose_name = _("Filmwork Person")
+        verbose_name_plural = _("Filmwork Persons")
         constraints = [
             models.UniqueConstraint(
                 fields=["film_work_id", "person_id", "role"],

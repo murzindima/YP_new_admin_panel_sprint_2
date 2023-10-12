@@ -47,7 +47,7 @@ COPY docker-entrypoint.sh ${VIRTUAL_ENV}/docker-entrypoint.sh
 RUN mkdir ${VIRTUAL_ENV}/static
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libpq5\
+    libpq5 gettext\
     && rm -rf /var/lib/apt/lists/*
 RUN addgroup --system ${DOCKER_GROUP} && adduser --system ${DOCKER_USER} \
     && chown -R ${DOCKER_USER}:${DOCKER_GROUP} "${PROJECT_ROOT}"
